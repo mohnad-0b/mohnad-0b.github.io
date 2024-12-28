@@ -1,6 +1,6 @@
 ---
-title: Welcome to Quartz
+Welcome to mohand-0b blog
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+# Coming Soon
+
