@@ -4,14 +4,13 @@ import * as Component from "./quartz/components"
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [],
+  header: [Component.MobileOnly(Component.PageTitle()), Component.MobileOnly(Component.Spacer())],
   afterBody: [],
   footer: Component.Footer({
     links: {
       github: "https://github.com/mohnad-0b",
       linkedin: "https://www.linkedin.com/in/mohnad-banat/",
       cv_white: "https://rxresu.me/mohnadbanat00/mohannad-banat",
-      // cv_black: "https://rxresu.me/saberzero1/curriculum-vitae-dutch",
     },
   }),
 }
@@ -21,15 +20,31 @@ export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
     Component.Breadcrumbs(),
     Component.ArticleTitle(),
-    Component.ContentMeta(),
+    Component.ContentMeta({ showReadingTime: false }),
     Component.TagList(),
   ],
   left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
+    Component.DesktopOnly(Component.PageTitle()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.MobileOnly(
+      Component.ExplorerBurger({
+        folderClickBehavior: "link",
+        folderDefaultState: "collapsed",
+        useSavedState: true,
+        usePagePath: true,
+        title: "",
+      }),
+    ),
+    Component.DesktopOnly(
+      Component.ExplorerBurger({
+        folderClickBehavior: "link",
+        folderDefaultState: "collapsed",
+        useSavedState: true,
+        usePagePath: true,
+        title: "",
+      }),
+    ),
   ],
   right: [
     Component.Graph(),
@@ -40,13 +55,7 @@ export const defaultContentPageLayout: PageLayout = {
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
-  left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
-    Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
-  ],
+  beforeBody: defaultContentPageLayout.beforeBody,
+  left: defaultContentPageLayout.left,
   right: [],
 }
