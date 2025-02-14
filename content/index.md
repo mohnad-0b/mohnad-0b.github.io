@@ -3,7 +3,7 @@ title: Welcome to mohand-0b blog
 ---
 # About Me  
 
-Hey there! I’m **Muhand Banat**, a computer engineer who loves messing around with **software development, automation, and cybersecurity**. I enjoy both the **red and blue team** sides of security, but what really gets me excited is competing in **Capture The Flag (CTF)** events.  
+Hey there! I’m **Mohannad Banat**, a computer engineer who loves messing around with **software development, automation, and cybersecurity**. I enjoy both the **red and blue team** sides of security, but what really gets me excited is competing in **Capture The Flag (CTF)** events.  
 
 I’ve been part of several CTF teams, including:  
 - [PwnSec](https://ctftime.org/team/28797)  
